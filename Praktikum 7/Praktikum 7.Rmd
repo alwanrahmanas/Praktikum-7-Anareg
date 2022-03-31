@@ -1,0 +1,60 @@
+---
+title: "Untitled"
+author: "Alwan Rahmana"
+date: "3/31/2022"
+output: html_document
+---
+
+
+```{r}
+library(haven)
+```
+
+
+```{r}
+library(tibble)
+```
+
+
+```{r}
+data<-Data_Regresi07
+data<-data[1:20,]
+data
+```
+
+
+```{r}
+str(data)
+```
+
+
+```{r}
+
+```
+
+```{r}
+Y<-data$Y
+X1<-data$X1
+#D1<-as.factor(data$D1)
+D1<-data$D1
+rlb <- lm(Y~X1+D1)
+summary(rlb)
+```
+Interpretasi dari model tersebut, yaitu:
+
+Nilai intersep = 33,874 menunjukkan bahwa rata-rata jumlah bulan yang dibutukan perusahaan asuransi agar mampu mengadaptasi suatu inovasi yang dilakukan ketika ukuran perusahaan berdasar modal sebsar 0 juta dollar dan tipe perusahaan merupakan Mutual firm adalah selama 33,874 bulan.
+
+Nilai b1 = -0.102 menunjukkan bahwa jika ukuran perusahaan menurut modal naik 1 juta dollar maka jumlah waktu yagn dibutuhkan perusahaan asurasi untuk mengadaptasi inovasi akan turun sebesar 0,102 bilan dengan asumsi tipe perusahaan sama
+
+atau
+
+kenaikan ukuran perusahaan berdasar modal sebesar 1 juta dollar akan menurunkan rata-rata jumlah waktu (dalam bulan) yang dibutuhkan perusahaan asuransi agar mampu mengadaptasi inovasi yang dilakukan selama 0,102 bulan (1-2 bulan) dengan asumsi tipe perusahaan sama.
+
+Nilai b2 = 8,055 menunjukkan bahwa perusahaan bertipe stock firm membutuhkan waktu lebih banyak untuk mengadaptasi inovasi dibandingkan perusahaan bertipe mutual company yaitu sebesar 8.055
+
+Atau
+
+Secara rata-rata, perusahaan dengan tipe stock firm membutuhkan waktu 8,055 bulan (8-9 bulan) lebih lama untuk mengadaptasi inovasi yang dilakukan dibandingkan perusahaan dengan tipe mutual firm.
+
+
+
